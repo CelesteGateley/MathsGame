@@ -13,6 +13,6 @@ public class MultiplicationCalculation extends Calculation {
 
     @Override
     public String toString() {
-        return this.getVariable1() +  " X " + this.getVariable2();
+        return this.getVariable1String() +  " X " + this.getVariable2String();
     }
 }

@@ -13,6 +13,6 @@ public class AdditionCalculation extends Calculation {
 
     @Override
     public String toString() {
-        return this.getVariable1() +  " + " + this.getVariable2();
+        return this.getVariable1String() +  " + " + this.getVariable2String();
     }
 }

@@ -19,6 +19,16 @@ public abstract class Calculation {
         this.variable1 = variable1;
     }
 
+    public String getVariable1String() {
+        if (this.variable1 == (int)this.variable1) { return String.valueOf((int)this.getVariable1()); }
+        else { return String.valueOf(this.getVariable1()); }
+    }
+
+    public String getVariable2String() {
+        if (this.variable2 == (int)this.variable2) { return String.valueOf((int)this.getVariable2()); }
+        else { return String.valueOf(this.getVariable2()); }
+    }
+
     public double getVariable2() {
         return variable2;
     }
