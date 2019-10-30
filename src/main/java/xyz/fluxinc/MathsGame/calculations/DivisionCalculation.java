@@ -8,7 +8,7 @@ public class DivisionCalculation extends Calculation {
 
     @Override
     public double getResult() {
-        return this.getVariable1() + this.getVariable2();
+        return this.getVariable1() / this.getVariable2();
     }
 
     @Override
