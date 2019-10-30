@@ -39,7 +39,12 @@ public abstract class Calculation {
 
     public abstract double getResult();
 
-    public String getCalculation() { return this.toString(); }
+    public String getFullCalculation() {
+        String resultString;
+        if (this.getResult() == (int)this.getResult()) { resultString = String.valueOf((int)this.getResult()); }
+        else { resultString = String.valueOf(this.getResult()); }
+        return this.toString() + " = " + resultString;
+    }
 
     public abstract String toString();
 }
