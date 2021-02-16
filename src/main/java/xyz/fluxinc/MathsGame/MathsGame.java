@@ -2,13 +2,16 @@ package xyz.fluxinc.MathsGame;
 
 import xyz.fluxinc.MathsGame.errors.StorageFailedException;
 import xyz.fluxinc.MathsGame.logger.ConsoleLogger;
+import xyz.fluxinc.MathsGame.logger.FileLogger;
 import xyz.fluxinc.MathsGame.logger.LogLevel;
 import xyz.fluxinc.MathsGame.logger.Logger;
+
+import java.io.File;
 
 public class MathsGame {
 
     public static LogLevel LOG_LEVEL = LogLevel.DEBUG;
-    private static Logger logger = new ConsoleLogger();
+    private static Logger logger = new FileLogger(new File("latest.log"));
 
     public static void main(String[] args) {
         logger.debug("This is a debug message");

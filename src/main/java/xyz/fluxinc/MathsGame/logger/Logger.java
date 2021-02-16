@@ -1,6 +1,10 @@
 package xyz.fluxinc.MathsGame.logger;
 
+import java.text.SimpleDateFormat;
+
 public abstract class Logger {
+
+    static final SimpleDateFormat dateFormat = new SimpleDateFormat("[dd/MM/yyyy HH:mm:ss]");
 
     public abstract void debug(String message);
     public abstract void info(String message);

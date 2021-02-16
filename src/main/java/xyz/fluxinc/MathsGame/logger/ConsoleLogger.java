@@ -10,8 +10,6 @@ import static xyz.fluxinc.MathsGame.logger.LogLevel.compareLevel;
 
 public class ConsoleLogger extends Logger {
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("[dd/MM/yyyy HH:mm:ss]");
-
     @Override
     public void debug(String message) {
         if (!compareLevel(LogLevel.DEBUG, MathsGame.LOG_LEVEL)) return;
