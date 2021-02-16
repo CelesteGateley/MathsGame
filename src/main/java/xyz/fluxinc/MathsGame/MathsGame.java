@@ -1,17 +1,23 @@
 package xyz.fluxinc.MathsGame;
 
-import org.fusesource.jansi.AnsiConsole;
+import xyz.fluxinc.MathsGame.errors.StorageFailedException;
 import xyz.fluxinc.MathsGame.logger.ConsoleLogger;
 import xyz.fluxinc.MathsGame.logger.LogLevel;
 import xyz.fluxinc.MathsGame.logger.Logger;
 
 public class MathsGame {
 
-    public static LogLevel LOG_LEVEL = LogLevel.INFO;
+    public static LogLevel LOG_LEVEL = LogLevel.DEBUG;
     private static Logger logger = new ConsoleLogger();
 
     public static void main(String[] args) {
-        AnsiConsole.systemInstall();
+        logger.debug("This is a debug message");
+        logger.info("This is an info message");
+        logger.warn("This is a warning message");
+        logger.error("This is a error message");
+        logger.fatal("This is a fatal message");
+        logger.error(new StorageFailedException("This is a non-fatal exception"));
+        //logger.fatal(new StorageFailedException("This is a fatal exception"));
     }
 
     public static Logger getLogger() { return logger; }
