@@ -8,7 +8,6 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// TODO: Once logger is implemented, handle logging exceptions
 public class MySqlStorageHandler extends StorageHandler {
 
     private final String address;
