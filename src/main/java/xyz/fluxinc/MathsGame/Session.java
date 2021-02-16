@@ -9,16 +9,22 @@ public class Session {
 
     private final Map<Calculation, Double> answeredQuestions;
     private final String clientName;
+    private final int clientId;
     private final long timestamp;
 
-    public Session(String clientName) {
+    public Session(String clientName, int clientId) {
         this.clientName = clientName;
+        this.clientId = clientId;
         this.timestamp = System.currentTimeMillis();
-        this.answeredQuestions = new LinkedHashMap<Calculation, Double>();
+        this.answeredQuestions = new LinkedHashMap<>();
     }
 
     public Map<Calculation, Double> getAnsweredQuestions() {
         return answeredQuestions;
+    }
+
+    public void addAnsweredQuestion(Calculation calculation, double answer) {
+        answeredQuestions.put(calculation, answer);
     }
 
     public String getClientName() {
@@ -27,5 +33,9 @@ public class Session {
 
     public long getTimestamp() {
         return timestamp;
+    }
+
+    public int getClientId() {
+        return clientId;
     }
 }
