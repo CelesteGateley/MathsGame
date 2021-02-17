@@ -1,6 +1,8 @@
 package xyz.fluxinc.MathsGame.factories;
 
+import xyz.fluxinc.MathsGame.MathsGame;
 import xyz.fluxinc.MathsGame.calculations.*;
+import xyz.fluxinc.MathsGame.errors.LoggingFailedException;
 
 import java.util.ArrayList;
 
@@ -39,7 +41,8 @@ public class HardCalculationFactory extends CalculationFactory {
             case 3:
                 return new DivisionCalculation(value1, validDivisions.get(this.generateBoundRandomNumber(0, validDivisions.size()-1)));
             default:
-                System.out.println("This should not be reached!!");
+                try { MathsGame.getLogger().error("Reached unexpected default in Case-Switch"); }
+                catch (LoggingFailedException e) { e.printStackTrace(); }
         }
         return null;
     }

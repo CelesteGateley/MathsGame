@@ -1,9 +1,11 @@
 package xyz.fluxinc.MathsGame.factories;
 
+import xyz.fluxinc.MathsGame.MathsGame;
 import xyz.fluxinc.MathsGame.calculations.AdditionCalculation;
 import xyz.fluxinc.MathsGame.calculations.Calculation;
 import xyz.fluxinc.MathsGame.calculations.MultiplicationCalculation;
 import xyz.fluxinc.MathsGame.calculations.SubtractionCalculation;
+import xyz.fluxinc.MathsGame.errors.LoggingFailedException;
 
 public class EasyCalculationFactory extends CalculationFactory {
 
@@ -28,7 +30,8 @@ public class EasyCalculationFactory extends CalculationFactory {
             case 2:
                 return new MultiplicationCalculation(value1, value2);
             default:
-                System.out.println("This should not be reached!!");
+                try { MathsGame.getLogger().error("Reached unexpected default in Case-Switch"); }
+                catch (LoggingFailedException e) { e.printStackTrace(); }
         }
         return null;
     }
