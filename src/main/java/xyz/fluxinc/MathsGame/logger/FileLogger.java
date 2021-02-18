@@ -70,9 +70,9 @@ public class FileLogger extends Logger{
     public void fatal(Exception e) throws LoggingFailedException {
         if (!compareLevel(LogLevel.FATAL, MathsGame.LOG_LEVEL)) return;
         printStream.println(dateFormat.format(new Date()) + " [FATAL] A fatal error has occurred, details are below");
-        printStream.println(new String(new char[120]).replace("\0", "-"));
+        printStream.println(new String(new char[120]).replace("\0", "="));
         e.printStackTrace(printStream);
-        printStream.println(new String(new char[120]).replace("\0", "-"));
+        printStream.println(new String(new char[120]).replace("\0", "="));
         printStream.flush();
     }
 }
