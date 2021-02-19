@@ -11,6 +11,7 @@ public class Session {
     private final String clientName;
     private final int clientId;
     private final long timestamp;
+    private int score = 0;
 
     public Session(String clientName, int clientId) {
         this.clientName = clientName;
@@ -25,6 +26,7 @@ public class Session {
 
     public void addAnsweredQuestion(Calculation calculation, double answer) {
         answeredQuestions.put(calculation, answer);
+        if (calculation.getResult() == answer) score++;
     }
 
     public String getClientName() {
@@ -37,5 +39,9 @@ public class Session {
 
     public int getClientId() {
         return clientId;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

@@ -31,4 +31,7 @@ public class MathsGame {
 
     @Nullable
     public static Session getSession() { return currentSession; }
+
+    // TODO: Implement
+    public static void showNextQuestion() {}
 }
